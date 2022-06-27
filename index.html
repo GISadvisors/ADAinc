@@ -95,10 +95,32 @@
   color: black;
 }
 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #888;
+}
+
     </style>
 </head>
 
 <body class="bg-black muli">
+    <button onclick="topFunction()" id="myBtn" title="Home">Back To Top</button>
     <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
         <div class="flex justify-between">
             <a href="#" class="flex items-center p-2 mr-4 no-underline">
@@ -114,7 +136,7 @@
             <a href="#methodology" class="fs-m1 mx-3 py-3 mint-light no-underline hover-underline">Methodology</a>
             <a href="#Comparison" class="fs-m1 mx-3 py-3 mint-light no-underline hover-underline">Comparison</a>
             <a href="#meetteam" class="fs-m1 mx-3 py-3 mint-light no-underline hover-underline">Team</a>
-            <a href="#" class="button bg-white black fw-900 no-underline mx-5">Final Product</a>
+            <a href="#" class="button bg-white black fs-m1 fw-900 no-underline mx-5">Final Product</a>
         </div>
     </nav>
 
@@ -180,8 +202,8 @@
                         <img src="assets/images/automation.png" alt="">
                     </div>
                     <h4 class="white fw-600 fs-m3 mb-5">Automation</h4>
-                    <div class="indigo-lightest fw-600 fs-m1 lh-3 opacity-50">Using ArcGIS Pro, Python code blocks and SQL queries, an automated workflow
-                        was created to accelerate the mapping process.
+                    <div class="indigo-lightest fw-600 fs-m1 lh-3 opacity-50">Using ArcGIS Pro, Python code blocks and SQL queries, a series of automated workflows
+                        were created to accelerate the mapping process of valves and service lines.
                     </div>
                     <a href="#automation"
                         class="mt-5 button bg-indigo indigo-lightest fs-m1 white no-underline hover-opacity-100 hover-scale-up-1 ease-300">See More</a>
@@ -331,8 +353,8 @@
         <div class="flex flex-column md-flex-row md-w-80pc mx-auto">
             <div class="w-100pc md-w-50pc">
                 <div class="br-8 p-5 m-5 bg-indigo-lightest-10 pointer hover-scale-up-1 ease-300">
-                    <div class="inline-block bg-blue-80 indigo-lightest br-3 px-4 py-1 mb-4 fs-s1 uppercase">
-                        Automation- Custom tool to map valves at parcel centroids</div>
+                    <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-4 fs-m1">
+                        <span class="fw-900">AUTOMATION</span>- Custom tool to map valves at parcel centroids</div>
                     <div class="indigo-lightest fw-600 fs-m1">Time per valve: <span class="opacity-30"> N/A</span>
                     <br>
                     Total Time: <span class="fw-900"> ~1 minute</span> 
@@ -343,8 +365,8 @@
             </div>
             <div class="w-100pc md-w-50pc">
                 <div class="br-8 p-5 m-5 bg-indigo-lightest-10  pointer hover-scale-up-1 ease-300">
-                    <div class="inline-block bg-blue-80 indigo-lightest br-3 px-4 py-1 mb-4 fs-s2 uppercase">
-                        Automation- Custom tool mapping valves using building offsets</div>
+                    <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-4 fs-m1">
+                        <span class="fw-900">AUTOMATION</span>- Custom tool mapping valves using building offsets</div>
                         <div class="indigo-lightest fw-600 fs-m1">Time per valve: <span class="fw-900"> 30 seconds</span>
                             <br>
                             Total Time: <span class="fw-900"> 42 hours/1 week</span> 
@@ -361,8 +383,8 @@
         <div class="flex flex-column md-flex-row md-w-80pc mx-auto">
             <div class="w-100pc md-w-50pc">
                 <div class="br-8 p-5 m-5 bg-indigo-lightest-10 pointer hover-scale-up-1 ease-300">
-                    <div class="inline-block bg-blue-80 indigo-lightest br-3 px-4 py-1 mb-4 fs-s2 uppercase">
-                        Manual- Mapping valve locations by hand</div>
+                    <div class="inline-block bg-mint-80 indigo-lightest br-3 px-4 py-1 mb-4 fs-m1">
+                        <span class="fw-900">MANUAL</span>- Mapping valve locations by hand</div>
                     <div class="indigo-lightest fw-600 fs-m1">Time per valve: <span class="fw-900"> 2 minutes</span>
                     <br>
                     Total Time: <span class="fw-900"> 167 hours/4.5 weeks</span> 
@@ -373,8 +395,8 @@
             </div>
             <div class="w-100pc md-w-50pc">
                 <div class="br-8 p-5 m-5 bg-indigo-lightest-10  pointer hover-scale-up-1 ease-300">
-                    <div class="inline-block bg-blue-80 indigo-lightest br-3 px-4 py-1 mb-4 fs-s2 uppercase">
-                        Mobile- ArcGIS Field Maps data collection</div>
+                    <div class="inline-block bg-blue-80 indigo-lightest br-3 px-4 py-1 mb-4 fs-m1">
+                        <span class="fw-900">MOBILE</span>- ArcGIS Field Maps data collection</div>
                         <div class="indigo-lightest fw-600 fs-m1">Time per valve: <span class="fw-900"> 3.5 minutes</span>
                             <br>
                             Total Time: <span class="fw-900"> 438 hours/12 weeks</span> 
@@ -734,6 +756,30 @@
           x[slideIndex[no]-1].style.display = "block";  
         }
         </script>
+    
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
+
+
 </body>
 
 </html>
